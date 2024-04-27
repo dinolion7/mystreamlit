@@ -22,7 +22,7 @@ with st.sidebar:
     referrerpolicy="unsafe-url" browsingtopics></iframe>"""
     st.markdown(iframe_html, unsafe_allow_html=True)    
     
-    openai_api_key = st.text_input("OpenAI API KEY", type="password") # 배포용은 본인의 API를 사용토록 비워 둠.
+    openai_api_key = st.text_input("OpenAI API KEY", type="password",value = openai_api_key_value) 
     client = OpenAI(api_key = openai_api_key)
 
     thread_id = st.text_input("Thread ID", value = thread_id)
