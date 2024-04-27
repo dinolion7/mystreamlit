@@ -12,8 +12,7 @@ openai_api_key_value = st.secrets["openai_api_key_value"]
 
 with st.sidebar:
     
-    st.link_button("더 좋은 컨텐츠를 위해 후원하기", "https://toss.me/kimfl")
-    st.link_button("쿠팡 홈", "https://link.coupang.com/a/bzr5o5")
+    st.link_button("다이슨청소기 보러가기", "https://link.coupang.com/a/bzr8L0")
         
     my_cupanghome_link_html = "https://link.coupang.com/a/bzr8L0" # 다이슨 청소기 링크-샘플
     st.markdown(my_cupanghome_link_html, unsafe_allow_html=True) 
