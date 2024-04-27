@@ -14,13 +14,7 @@ with st.sidebar:
     my_cupanghome_link_html = "https://link.coupang.com/a/bzr8L0" # 다이슨 청소기 링크-샘플
     st.markdown(my_cupanghome_link_html, unsafe_allow_html=True) 
     st.info("이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.")
-    
-    ### 아래는 카테고리 배너 생성인데 작동이 안됨???
-    iframe_html = """<iframe src="https://ads-partners.coupang.com/widgets.html?id=775429&template=banner&
-    trackingCode=AF1125071&subId=&width=160&height=50" width="160" height="50" frameborder="0" scrolling="no" 
-    referrerpolicy="unsafe-url" browsingtopics></iframe>"""
-    st.markdown(iframe_html, unsafe_allow_html=True)    
-    
+       
     openai_api_key = st.text_input("OpenAI API KEY", type="password") # 배포용은 본인의 API를 사용토록 비워 둠.
     client = OpenAI(api_key = openai_api_key)
 
@@ -40,9 +34,6 @@ st.title("My ChatBot")
 
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "유치원 선생님한테 무엇이든 물어보세요?"}]
-
-print(f"st.session_state\n{st.session_state}")
-print()
 
 for msg in st.session_state.messages:
     st.chat_message(msg["role"]).write(msg["content"])
@@ -70,5 +61,4 @@ if prompt:
     
     st.session_state.messages.append({"role": "assistant", "content": assistant_content})
     st.chat_message("assistant").write(assistant_content)
-    
-    print(st.session_state.messages)
+   
