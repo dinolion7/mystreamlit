@@ -5,7 +5,7 @@ import time
 # 배포용 깃허브 시크릿으로 감춤
 assistant_id = st.secrets["assistant_id"]
 thread_id = st.secrets["thread_id"]
-OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
+openai_api_key_value = st.secrets["openai_api_key_value"]
 
 with st.sidebar:
     
